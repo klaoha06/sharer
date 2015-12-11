@@ -1,8 +1,30 @@
 <section>
+	<%= render 'refills/type_system_slab' %>
+</section>
+
+<section>
 	<form>
-	  <textarea id="edit" name="content"></textarea>
+	  <textarea id="froala-editor" name="content">
+	  </textarea>
+	 	  <div class="button-group">
+	    <label>
+	      <input type="radio" name="button-group" value="item" checked>
+	      <a id="get-text" class="my_button" href="javascript:void(0)">Share!</a>
+	    </label>
+	  </div>
+
 	</form>
 <!-- 	<div class="fr-view">
 	  Here comes the HTML edited with the Froala rich text editor.
 	</div> -->
+</section>
+
+<section>
+<article class="type-system-slab">
+  <h2 style="text-align: center; margin: 50px auto;">Choose the social media you would like to post to</h2>
+</article>
+</section>
+
+<section>
+	<%= render 'refills/flex_boxes' %>
 </section>

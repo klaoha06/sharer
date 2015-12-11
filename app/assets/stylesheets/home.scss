@@ -1,3 +1,82 @@
 section {
   @include outer-container;
 }
+
+.centered-navigation {
+	background: none;
+	border-bottom: none;
+}
+
+ul li.nav-link {
+    color: red;
+}
+
+ul li.nav-link a:hover {
+    color: white;
+}
+
+header.navigation ul li.nav-link a {
+    color: black;
+    display: inline-block;
+    font-weight: 400;
+}
+
+header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
+    color: grey;
+}
+
+header.navigation {
+    background-color: white;
+    border-bottom: none;
+    min-height: 60px;
+    width: 100%;
+    z-index: 999;
+}
+
+.my_button {
+    background-color: #477DCA;
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 7px 18px;
+    text-decoration: none;
+    background-clip: padding-box;
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    margin-top: 1em;
+    padding: 0.75em 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ribbon-box {
+	border: none;
+}
+header.navigation .navigation-wrapper {
+    z-index: 999;
+}
+
+header.navigation .navigation-tools {
+    background: white;
+}
+header.navigation .navigation-menu-button {
+    color: black;
+}
+
+header.navigation .navigation-menu-button:focus, header.navigation .navigation-menu-button:hover {
+    color: black;
+}
+.footer-2 {
+    background: none;
+}
+.footer-2 ul li a:focus, .footer-2 ul li a:hover {
+    color: grey;
+}
+
+.footer-2 ul li a {
+    color: black;
+}

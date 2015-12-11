@@ -13,11 +13,11 @@
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
 </head>
-<%= render "refills/centered_navigation" %>
+<%= render "refills/navigation" %>
 <body class="<%= body_class %>">
   <%= render "flashes" -%>
   <%= yield %>
-  <%= render "refills/footer" %>
+  <%= render "refills/footer_2" %>
   <%= render "javascript" %>
 </body>
 </html>

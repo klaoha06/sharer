@@ -39,6 +39,83 @@
 //= require plugins/url.min.js
 //= require plugins/video.min.js
 
+
+      // $(function() {
+      //   $.FroalaEditor.DefineIcon('saveSelection', {NAME: 'download'});
+      //   $.FroalaEditor.RegisterCommand('saveSelection', {
+      //     title: 'Info',
+      //     focus: true,
+      //     undo: false,
+      //     refreshAfterCallback: false,
+      //     callback: function () {
+      //       this.selection.save();
+      //       alert('selection saved');
+      //     }
+      //   });
+
+      //   $.FroalaEditor.DefineIcon('restoreSelection', {NAME: 'upload'});
+      //   $.FroalaEditor.RegisterCommand('restoreSelection', {
+      //     title: 'Info',
+      //     focus: true,
+      //     undo: false,
+      //     refreshAfterCallback: false,
+      //     callback: function () {
+      //       this.selection.restore();
+      //     }
+      //   });
+
+      //   $.FroalaEditor.DefineIcon('clearSelection', {NAME: 'trash'});
+      //   $.FroalaEditor.RegisterCommand('clearSelection', {
+      //     title: 'Info',
+      //     focus: true,
+      //     undo: false,
+      //     refreshAfterCallback: false,
+      //     callback: function () {
+      //       this.selection.clear();
+      //     }
+      //   });
+
+      //   $('#froala-editor').froalaEditor({
+      //     toolbarButtons: [
+      //       'saveSelection', 'restoreSelection', 'clearSelection'
+      //     ]
+      //   });
+      // });
+
+      // $(function() {
+      //   $('#froala-editor').froalaEditor({
+      //     toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+      //     fontFamilySelection: true,
+      //     fontSizeSelection: true,
+      //     paragraphFormatSelection: true,
+		    //   heightMin: 250,
+      //   });
+      // });
+
       $(function() {
-          $('#edit').froalaEditor()
+        $('#froala-editor')
+          .on('froalaEditor.initialized', function (e, editor) {
+            editor.events.bindClick($('body'), 'a#get-text', function () {
+              console.log(editor.html.get());
+              $.ajax({
+              	type: "POST",
+              	url: "/posts",
+              	data: { post: {content: editor.html.get()}},
+              	success: function(data){
+              		console.log(data);              		
+              	},
+              	error: function(data){
+              		console.log(data);
+              	}            	
+              });
+            });
+          })
+          .froalaEditor({
+          toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+          fontFamilySelection: true,
+          fontSizeSelection: true,
+          paragraphFormatSelection: true,
+		      heightMin: 150,
+	        fullPage: true
+        });
       });

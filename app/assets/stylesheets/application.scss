@@ -9,6 +9,7 @@
 @import "neat";
 @import "base/base";
 @import "refills/*";
+@import "animate";
 @import "plugins/char_counter.min";
 @import "plugins/code_view.min";
 @import "plugins/colors.min";
@@ -20,5 +21,5 @@
 @import "plugins/line_breaker.min";
 @import "plugins/table.min";
 @import "plugins/video.min";
-@import "home"
+@import "home";
 /*@import "application/flashes";*/

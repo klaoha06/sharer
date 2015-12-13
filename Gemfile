@@ -26,6 +26,9 @@ gem "devise"
 gem "font-awesome-rails"
 gem "wysiwyg-rails"
 
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 group :development do
   gem "quiet_assets"
   gem "refills"

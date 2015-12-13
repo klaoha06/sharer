@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   	helper ApplicationHelper
   def index
-  	# @posts = Post.all
+  	# @posts = Post.al
+
   end
 
 end

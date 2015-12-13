@@ -119,3 +119,6 @@
 	        fullPage: true
         });
       });
+
+              new WOW().init();
+

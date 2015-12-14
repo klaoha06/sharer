@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '50747d0958631e59c1ea87f08bcc0ce04a8e6c9198644ec84fb452cee503de64d831f5b05da655cef217ea6a23a23c31e340b2bdd637b156f69c444598cf6a7e'
+  config.secret_key = '50747d0958631e59c1ea87f08bcc0ce04a8e6c9198644ec84fb452cee503de64d831f5b05da655cef217ea6a23a23c31e340b2bdd637b156f69c444598cf6a7e'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -239,6 +239,13 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, '553637294793857', '66ddcac89d477031660538f50b1362f7', :scope => 'email, public_profile, publish_actions'
+  config.omniauth :twitter, 'Q9FaweWk0Lyl0bhbrlay5ftez', 'OUnST0xsoQ1SYQqSEnmZd3rtotdrde2xqlobj8KmMNqPfh3YXl'
+  config.sign_out_via = :get
+  # config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"], { :scope => 'email', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  # config.omniauth :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"], { :scope => 'r_fullprofile, r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  # config.omniauth :linkedin, ENV["LINKEDIN_KEY"], ENV["LINKEDIN_SECRET"], { :scope => 'r_basicprofile r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  # config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user, public_repo"
+  # config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET'], {}
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

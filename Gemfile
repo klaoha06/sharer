@@ -28,6 +28,9 @@ gem "wysiwyg-rails"
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'koala'
+gem 'linkedin'
 
 group :development do
   gem "quiet_assets"
